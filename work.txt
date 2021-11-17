@@ -1,7 +1,0 @@
-﻿work 1
-work 2
-work 3
-work 4
-apple work 5
-google work 5
-ms work 5
