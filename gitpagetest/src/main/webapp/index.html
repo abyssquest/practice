@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="">
+		<style>
+			h1 {
+				text-align: center;
+			}
+		</style>
+		<title>ajax 연습</title>
+	</head>
+	<body>
+		<h1>ajax연습</h1>
+		<div id="ajaxtest">왜 안되지</div>
+		<script type="text/javascript">
+		$(()=>{
+			$('#ajaxtest').load('./module/left_side.html #container');
+			$('#ajaxtest').load('./module/right_side.html #container');
+		});
+		</script>
+	</body>
+</html>
