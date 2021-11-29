@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML</title>
+</head>
+<body>
+	<!-- ajax 예제 2 -->
+	<article></article>
+	<input type="button" value="fetch" onclick="
+	fetch('html') /* 'css' */
+		.then(function(response){
+			response.text().then(function(text){
+				/* alert('text'); */ 
+				document.querySelector('article').innerHTML = text;
+			})
+		})
+	">
+</body>
+</html>

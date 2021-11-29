@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML</title>
+</head>
+<body>
+	<article></article>
+	<input type="button" value="fetch" onclick="
+	// Ajax 예제 3
+	// Asynchronous
+	function callbackme(){
+		console.log('response end');
+	}
+	fetch('html')/* client 가 서버에 요청 보내기 */
+	.then( /* 서버가 응답 보낼때까지 딴일 해라 */
+		callbackme /* 서버가 응답을 보내면 실행할 함수 */
+	);
+	console.log(1);
+	console.log(2);
+	">
+</body>
+</html>

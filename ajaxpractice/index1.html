@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ajax 예제 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="colors.js"></script>
+</head>
+<body>
+	<!-- ajax 예제 1 : fetch1,2,3.html 공부후 index2로 가시오 -->
+	<h1><a href="index.html">WEB</a></h1>
+	<input type="button" value="night" id="night_day" onclick="nightDayHandler(this);">
+	<ol>
+		<li><a onclick="document.querySelector('article').innerHTML = '<h2>HTML</h2>HTML is....';">HTML</a></li>
+		<li><a onclick="document.querySelector('article').innerHTML = '<h2>CSS</h2>CSS is....';">CSS</a></li>
+		<li><a onclick="document.querySelector('article').innerHTML = '<h2>JavaScript</h2>JavaScript is....';">JavaScript</a></li>
+	</ol>
+	<article></article>
+</body>
+</html>
