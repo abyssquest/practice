@@ -1,0 +1,48 @@
+키보드 입력
+scan()
+	매개변수
+	what=타입() - 입력 데이터를 변환
+
+편집기 입력
+edit(변수)
+
+파일 불러오기
+read.table(file="파일/인터넷 경로", header=F헤더불포함T헤더포함, sep=구분자, na.strings="-"(-문자열을 NA로))
+read.table(file.choose(), header=F/T,na.string=)
+read.csv(file="파일/인터넷 경로", header=F/T, na.string=,encoding="UTF-8")
+
+names(데이터프레임변수) <- 컬럼명 벡터
+
+tail(변수) - 변수 아래행 6개 보기
+
+
+
+데이터 저장
+cat(문자열, 변수 열거 가능)
+print(변수, 또는 수식만 가능)
+
+파일에 데이터 저장 1
+sink("경로/파일명") - 저장할 파일 오픈
+변수 <- 데이터 : 변수에 데이터 저장
+변수 : 콘솔에 출력되지 않고 파일에 저장
+sink() - 오픈된 파일 닫기
+
+파일에 데이터 저장 2 - txt
+write.table(
+	변수,
+	"경로/파일명",
+	row.names= T행이름저장 F행이름제거,
+	quote= T따옴표저장 F따옴표제거
+)
+
+파일에 데이터 저장 3 - xlsx
+write.xlsx(
+	변수,
+	"경로/파일명"
+)
+
+파일에 데이터 저장 4 - csv
+write.csv(
+	변수,
+	"경로/파일명"
+)

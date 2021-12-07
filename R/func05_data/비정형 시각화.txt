@@ -1,0 +1,4 @@
+graph.edgelist
+(
+	데이터
+)

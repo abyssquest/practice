@@ -1,0 +1,30 @@
+equal.count
+(
+	데이터,
+	number=숫자, - 영역 숫자
+	overlap=숫자 - 겹치는구간
+)
+
+함수이름
+(
+	y축~x축|분류1*분류2,
+	data=데이터,
+	overlap=숫자, - 겹치는 구간
+	
+)
+
+조건 그래프
+coplot
+(
+	number=숫자 - 사이 간격
+	bar.bg=막대색
+)
+
+cloud
+(
+	z축~y축*x축,
+	data=데이터,
+	zlim=z축단위,
+	panal.aspect=테두리사이즈,
+	screen=회전각
+)

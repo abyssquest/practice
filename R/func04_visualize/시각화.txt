@@ -1,0 +1,97 @@
+막대차트
+barplot(
+	데이터,
+	xlim=x축범위, - 가로 막대 차트 일때
+	ylim=y축범위, - 세로 막대 차트 일때
+	xlab=x축 제목,
+	ylab=y축 제목,
+	col=바색깔, - 색(숫자로 표시)
+	main=문자열, - 제목
+	horiz= F세로막대 T가로막대 ,
+	space=숫자, - 막대사이 공간 비율
+	beside=T누적출력 F개별출력,
+	cex=축 글자 크기 비율,
+	cex.names= 축 이름 문자 크기.
+	fill= 라벨색깔,
+	legend=row.names(데이터) : 오른쪽 상단에 범례
+)
+
+점 차트
+dotchart(
+	y축~x축|그래프분류,
+	데이터,
+	color=색깔
+	lcolor=가로줄 색깔
+	cex=축 글자 크기
+	pch= 점 모양:원1 삼각2 +3 빈사각5 채워진사각15 채워진원20
+)
+
+원형 차트
+pie(
+	데이터
+	labels=names(),
+	border=색 - 경계줄 색깔
+)
+
+title(문자열) - 차트에 제목 넣기
+
+----- 연속변수 시각화 -----
+boxplot(
+	데이터,
+	range=0 - 최소값과 최대값을 점선으로 연결하는 역할
+)
+
+abline(h=, lty=3(점선), col=색깔 )
+lines() - 라인추가
+curve(
+	add=T
+) - 커브선 그리기
+
+대각선 추가
+par(new=T)
+plot(
+	데이터,
+	type= ,"l"실선 "o"원형통과실선 "h"직선 "s"꺽은선
+	lwd=선굵기비율,
+	axes= TF,
+	ann= TF
+	bg=점 내부 색깔
+)
+
+텍스트 추가
+text(x축위치, y축위치, 문자열, col=색깔)
+
+
+
+3차원 시각화
+산점도
+scatterplot3d(밑변, 오른쪽변 컬럼명, 왼쪽변 컬럼명, type)
+
+분포 현황 분석
+
+밀도 그래프
+densityplot
+(
+	~x축칼럼|factor(조건별),
+	data=데이터,
+	groups=변수
+
+	plot.points=TF 밀도점 표시여부
+	auto.key=TF 범례
+)
+
+xyplot
+(
+	x축칼럼~y축칼럼|factor(조건별),
+	data=데이터
+)
+
+막대 그래프 그리기
+barchart
+(
+	x축~y축|분류조건단위
+	data=데이터
+	layout=분류패널모양
+	origin=x축구간시작부분설정
+)
+

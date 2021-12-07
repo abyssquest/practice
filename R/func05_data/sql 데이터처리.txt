@@ -1,0 +1,31 @@
+JDBC
+(
+	"oracle.jdbc.driver.OracleDriver",
+	"드라이버.jar 경로"
+)
+
+
+dbConnect
+(
+	JDBC객체,
+	"jdbc:oracle:thin:@//localhost:1521/xe",
+	"scott",
+	"tiger"
+)
+
+dbGetQuery : select문
+(
+	dbConnect객체,
+	query문자열
+)
+
+dbSendUpdata : insert문, update문, delete문
+(
+	dbConnect객체,
+	query문자열
+)
+
+dbDisconnect
+(
+	dbConnect객체
+)

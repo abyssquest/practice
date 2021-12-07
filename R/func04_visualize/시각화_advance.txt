@@ -1,0 +1,85 @@
+histogram
+(
+	y축1+y축2~x축|분류조건
+	data=데이터
+)
+
+그래프에 추가
+update
+(
+	그래프변수,
+	main=제목문자열
+)
+
+qplot
+(
+	x=x축,
+	y=y축,
+	data=데이터,
+	fill=변수, - 변수에 색채우기
+	binwidth=막대폭,
+	facets=패널 y축~x축
+	size=크기(팩터로 다른크기적용가능),
+	shape=모양(팩터로 다른모양)
+	geom=
+		"bar"막대그래프속성
+		"point"점그래프 속성
+		"smooth"범위그래프
+		"line"선그래프
+		"area" 범위그래프
+)
+
+ggplot
+(
+	aes : 미적요소
+	(
+		x=x축,
+		y=y축,
+		color=색깔
+		size=
+	)
+)
+
+ggsave : 가장 최근 그래프 저장
+(
+	file="경로/파일이름",
+	dpi=,
+	width=
+	height=
+	plot=
+)
+
+ggmap
+(
+	get_stamenmap
+	(
+		c - 위도 경도 중심으로 좌표 설정
+		(
+			left=,
+			right=,
+			top=,
+			bottom,
+		),
+		zoom=숫자,
+		maptype=
+			'terrain'
+			'watercolor'
+	)
+)
+
++
+	geom_point() 산점도 추가
+	geom_line() 선그래프 추가
+	geom_text() : 텍스트 추가
+	xlim,ylim,zlim(시작숫자,종료숫자) 범위값 추가
+	stat_bin
+	(
+		aes():미적요소,
+		geom="": 기하학요소
+	)
+	ggtitle(문자열) 타이틀 추가
+	theme() 테마추가
+		축제목
+		타이틀
+		축이름크기
+		추가설명 타이틀,위치,방향

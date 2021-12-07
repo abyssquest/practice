@@ -1,0 +1,55 @@
+min() 최소값
+max() 최대값
+range() 범위
+mean() 평균
+median() 중간값
+sum() 합
+sd() 표준편차
+table() 빈도수
+
+정규분포(연속형) 난수 생성
+set.seed() - 종자값 설정
+rnorm(
+	n 개수,
+	mean 평균,
+	sd 분산
+)
+
+dnorm(x, mean = 0, sd = 1, log = FALSE)
+pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)
+qnorm(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)
+rnorm(n, mean = 0, sd = 1)
+
+균등분포(연속형) 최소값초과, 최대값 미만 난수 생성
+runif(
+	n 개수,
+	min 최소값,
+	max 최대값
+)
+
+이항분포(이산형) 난수 생성
+dbinom(x, size, prob, log = FALSE)
+pbinom(q, size, prob, lower.tail = TRUE, log.p = FALSE)
+qbinom(p, size, prob, lower.tail = TRUE, log.p = FALSE)
+rbinom(n, size, prob)
+
+prod(벡터) - 벡터 원소들의 곱
+factorial(숫자) - 펙토리얼
+abs(숫자) - 절대값
+sqrt(숫자) - 제곱근
+log(숫자) - 자연로그 (밑수가 e)
+log10(숫자) - 10의 일반로그 (밑수가 10)
+
+union() 합집합
+setequal() 동일성체크
+intersect() 교집합
+setdiff() 차집합
+
+
+ceiling() - 올림
+floor() - 내림
+round
+(
+	변수,
+	digits=숫자 : 반올림할 소수점 아래자리 숫자 (1:소수점아래처음숫자)
+)

@@ -1,0 +1,29 @@
+httr, XML 패키지
+
+
+xpathSApply( 					- 태그자료 수집
+	xmlRoot(						- html 파싱
+		htmlTreeParse(
+			GET(url문자열),		- 웹문서 요청
+			useInternalNodes=T,
+			trim=T,
+			encoding="utf-8",
+		)
+	),
+	"//a[@class='link_txt']",
+	xmlValue
+)
+
+불용어 제거
+gsub
+(
+	"", - 불용어
+		[\r\n\t]
+		[[:punct:]]
+		[[:cntrl:]]
+		[a-z]+
+		[A-Z]+
+		\\s+
+	' ', - 교체후
+	자료데이터
+)

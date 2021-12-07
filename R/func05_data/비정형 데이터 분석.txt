@@ -1,0 +1,127 @@
+# 직접 검색해서 KoNLP 설치 과정
+# 1. rtools 설치 (https://cran.r-project.org/bin/windows/Rtools/index.html)
+# 2. multilinguer 설치
+install.packages("multilinguer")
+library(multilinguer)
+# 3. java 설치
+install.packages("rJava")
+Sys.setenv(JAVA_HOME='C:\\DevLang\\JDK17_Oracle')
+library(rJava)
+# 4. 의존성 패키지 설치
+install.packages(c("hash", "tau", "Sejong", "RSQLite", "devtools", "bit", "rex", "lazyeval", "htmlwidgets", "crosstalk", "promises", "later", "sessioninfo", "xopen", "bit64", "blob", "DBI", "memoise", "plogr", "covr", "DT", "rcmdcheck", "rversions"), type = "binary")
+# 5. 깃허브 설치, KoNLP 설치
+install.packages("remotes")
+remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
+# 6. KoNLP 설치 확인
+library(KoNLP)
+extractNoun('이 영화 정말 재미있다')
+
+install.packages(c("wordcloud","tm"))
+library(wordcloud); library(tm)
+#**************************************************
+
+
+세종사전에 신규단어 추가
+data.frame
+(
+	term=c("R 프로그래밍", "페이스북", "소셜네트워크"),
+	tag='ncn' : 명사
+)
+
+buildDictionary
+(
+	ext_dic='sejong',
+	user_dic=신규단어 data.frame 객체
+)
+
+파일 로드
+file("경로", encoding="UTF-8")
+
+줄단위 데이터 생성
+readLines(파일객체)
+
+
+명사 추출
+extractNoun
+(
+	문자열
+)
+
+말뭉치 생성
+Corpus
+(
+	VectorSource
+	(
+		줄단위 데이터
+	)
+)
+
+tm_map
+(
+	말뭉치 객체,
+	removePunctuation, - 문장부호 제거
+	removeNumbers, - 수치 제거
+	tolower, - 소문자로 변경
+	removeWords, - 불용어 제거
+	stopwords('english') - 영어제거?
+)
+
+TermDocumentMatrix
+(
+	말뭉치 객체,
+	control=
+		list(wordLengths=c(4,16)) : 4~16byte의 한글음절 2~8음절
+)
+
+말뭉치 객체 > 매트릭스 > 데이터프레임
+as.data.frame(as.matrix(말뭉치 객체))
+
+빈도수 정렬(내림차순)
+sort(rowSums(객체), decreasing=T)
+
+단어 구름 시각화 (wordcloud)
+wordcloud
+(
+	names(말뭉치 데이터프레임)
+	, 말뭉치 데이터프레임
+)
+
+brewer.pal - 색상목록에서 개수만큼 추출해 색 목록 생성
+(
+	개수,
+	색상목록 이름
+		"Dark"
+		"Paired"
+)
+
+unique() : 공백 block 제거
+sapply(데이터, unique)
+
+트랜젝션 생성
+as(데이터, "transactions")
+
+교차표 작성
+crossTable(데이터)
+
+단어간 연관 규칙 산출
+apriori
+(
+	데이터,
+	parameter=
+		list
+		(
+			support=0.25,
+			conf=0.05
+		)
+)
+
+연관규칙 생성결과 보기
+inspect(연관규칙객체)
+
+연관규칙 레이블을 " "으로 분리
+labels
+(
+	연관규칙객체,
+	ruleSep=" "
+)
+
